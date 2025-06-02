@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Spartan", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg-main);
+  transition: background-color 0.3s;
+}
+
+:root {
+  --bg-main: #3b4664;
+  --bg-calc: #252d44;
+  --btn-bg: #eae3dc;
+  --btn-color: #000;
+  --btn-shadow: #b4a597;
+  --del-bg: #647198;
+  --del-shadow: #414e73;
+  --equal-bg: #d13f30;
+  --equal-shadow: #93261a;
+}
+
+body.theme2 {
+  --bg-main: #e6e6e6;
+  --bg-calc: #d3cdcd;
+  --btn-bg: #e5e4e1;
+  --btn-color: #000;
+  --btn-shadow: #a69d91;
+  --del-bg: #388187;
+  --del-shadow: #1c6066;
+  --equal-bg: #c85402;
+  --equal-shadow: #873901;
+}
+
+body.theme3 {
+  --bg-main: #17062a;
+  --bg-calc: #1e0936;
+  --btn-bg: #331b4d;
+  --btn-color: #f7de43;
+  --btn-shadow: #881c9e;
+  --del-bg: #56077c;
+  --del-shadow: #881c9e;
+  --equal-bg: #00decf;
+  --equal-shadow: #6cf9f2;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.theme-switcher {
+  margin-bottom: 20px;
+}
+
+.theme-switcher button {
+  margin: 0 5px;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.calculator {
+  background-color: var(--bg-calc);
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin: auto;
+  transition: background-color 0.3s;
+}
+.display {
+  background-color: #181f32;
+  height: 70px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 15px;
+  text-align: right;
+  font-size: 32px;
+  color: white;
+  overflow-x: auto;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.button {
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  border: none;
+  border-radius: 8px;
+  font-size: 24px;
+  padding: 15px 0;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px var(--btn-shadow);
+  transition: all 0.2s;
+}
+
+.del {
+  background-color: var(--del-bg);
+  color: #fff;
+  box-shadow: 0 4px var(--del-shadow);
+}
+
+.reset {
+  grid-column: span 2;
+  background-color: var(--del-bg);
+  color: #fff;
+  box-shadow: 0 4px var(--del-shadow);
+}
+
+.equal {
+  grid-column: span 2;
+  background-color: var(--equal-bg);
+  color: #fff;
+  box-shadow: 0 4px var(--equal-shadow);
+}
+
+@media (max-width: 400px) {
+  .calculator {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+
+  .button {
+    font-size: 18px;
+    padding: 12px 0;
+  }
+
+  .theme-switcher button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
